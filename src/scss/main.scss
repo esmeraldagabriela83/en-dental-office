@@ -881,8 +881,16 @@ main{
 }
 }
 
+article.content-procedures{
+  border:3px solid DimGray;
 
-section#background-gdbr-section , article#content-detartraj , article#content-odontologie{
+  &:hover{
+      border:3px solid #262626;
+      transition: 0.5s ease;
+  }
+}
+
+section#background-gdbr-section , article.content-procedures{
 margin: 3em;
 
   display: block;
@@ -942,8 +950,9 @@ margin: 3em;
 
 .questions-image{
   width:90%;
+
   @include xs {
-  width:90%;
+  width:70%;
   }
   @include sm {
   width:50%;
