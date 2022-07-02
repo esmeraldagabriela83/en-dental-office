@@ -675,6 +675,28 @@ a{
     }
 
   }
+
+ul {
+  // border:3px solid yellowgreen;
+  li a{
+    color:DimGray;
+    // border:3px solid pink;
+    &:hover{
+      color:#262626;
+    }
+  }
+  li:nth-of-type(1){
+      // border:3px solid deeppink;
+      margin-bottom: 0.5em;
+  }
+
+  li:nth-of-type(2){
+      // border:3px solid skyblue;
+      margin-top: 0.5em;
+  }
+
+}
+
 }
 
 /////////////---------------------------------------------------------------------------------------------------------------
@@ -879,6 +901,35 @@ main{
   align-items: center;
   justify-content: center;
 }
+}
+
+#background-gdbr-section{
+  h1 , h3{
+    text-align: center;
+  }
+
+ul.first-ul li.first-li{
+  list-style-type: square;
+  margin-left: 1em;
+  // border:3px solid yellow;
+}
+
+}
+
+#background-gdbr-section{
+  li ul.second-ul li.second-li{
+    list-style-type: circle;
+    margin-left: 2em;
+    // border:3px solid green;
+  }
+}
+
+#background-gdbr-section a{
+  color:DimGray;
+}
+
+#background-gdbr-section a:hover{
+  color:#262626;
 }
 
 article.content-procedures{

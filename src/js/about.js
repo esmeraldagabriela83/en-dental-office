@@ -66,6 +66,26 @@ We offer general dentistry services for patients of all ages, for all family mem
 </div>
 </article>
 
+<p style={h3Style}>
+Address:
+</p>
+
+<p style={{marginBottom:"1em"}}>
+Bucharest , section 2 , Colentina number. 8 , block 5 , stairs B , apartment 46<br></br>
+interphone: 46 C
+</p>
+
+<p style={h3Style}>Tel:</p>
+<p style={{marginBottom:"1em"}}>+40 723 517 707</p>
+<p style={h3Style}>Email:</p>
+<p style={{marginBottom:"1em"}}>nicu.moraru55@gmail.com</p>
+<p style={h3Style}>Details:</p>
+
+<ul>
+<li><a href="https://deltamedical.eu/" target="_blank">https://deltamedical.eu/</a></li>
+<li><a href="http://astonclinic.ro/index.html" target="_blank">http://astonclinic.ro/index.html</a></li>
+</ul>
+
     </section>
 
 
