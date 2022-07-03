@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {TextInput , CheckBoxInput , TextAreaInput} from "./Inputs";
 import persons from "../../data/db";
-console.log("---------persons is from db.json : " , persons);
-console.log("persons.users is an array : " , persons.users);
-console.log("persons.users[0] is first object from the array : " , persons.users[0]);
+// console.log("---------persons is from db.json : " , persons);
+// console.log("persons.users is an array : " , persons.users);
+// console.log("persons.users[0] is first object from the array : " , persons.users[0]);
 // console.log("persons.users[0].id is  : " , persons.users[0].id);
 // console.log("persons.users[5].id is  : " , persons.users[5].id);
 // console.log("persons.users[5].name is  : " , persons.users[5].name);
@@ -53,34 +53,44 @@ console.log("rendering contact form");
      event.preventDefault();
       const errs = [];
 
-      const {name, username, password, email, phone, message, usertype , age,  tnc} = form;
+      const {
+        name,
+        // username,
+        password,
+        email,
+        // phone,
+        message,
+        // usertype,
+        age,
+        // tnc
+        } = form;
         if(name.length < 3 || name.length > 30) {
             errs.push('name');
           }
-          if(username.length < 3) {
-            errs.push('username');
-          }
+          // if(username.length < 3) {
+          //   errs.push('username');
+          // }
           if(password.length < 3) {
             errs.push('password');
           }
           if(email.length < 3) {
             errs.push('email');
           }
-          if(phone.length != 10) {
-            errs.push('phone');
-          }
+          // if(phone.length != 10) {
+          //   errs.push('phone');
+          // }
           if(message.length < 3 || message.length > 255) {
             errs.push('message');
           }
-          if(usertype === null) {
-            errs.push('usertype');
-          }
+          // if(usertype === null) {
+          //   errs.push('usertype');
+          // }
           if(age === null) {
             errs.push('age');
           }
-          if(tnc === null) {
-            errs.push('tnc');
-          }
+          // if(tnc === null) {
+          //   errs.push('tnc');
+          // }
 
           let checkPass = document.getElementById('checkpassword').value;
           if(checkPass != password) {
@@ -104,7 +114,7 @@ console.log("rendering contact form");
 
      <TextInput type={"text"} name={"name"} id={"name"} placeholder={"First and second name"} label={"Name"} hasErrors={errors.includes("name")} doChange={formHandleChange}/>
 
-     <TextInput type={"text"} name={"username"} id={"username"} placeholder={"name123"} label={"Username"} hasErrors={errors.includes("username")} doChange={formHandleChange}/>
+
 
      <TextInput type={"password"} name={"password"} id={"password"}  label={"Password"} hasErrors={errors.includes("password")} doChange={formHandleChange}/>
 
@@ -112,27 +122,9 @@ console.log("rendering contact form");
 
      <TextInput type={"email"} name={"email"} id={"email"} placeholder={"name@gmail.com"} label={"Email"} hasErrors={errors.includes("email")} doChange={formHandleChange}/>
 
-     <TextInput type={"tel"} name={"phone"} id={"phone"} placeholder={"your phone"} label={"Phone"} hasErrors={errors.includes("phone")} doChange={formHandleChange}/>
+
 
      <TextAreaInput label={"message"} name={"message"} id={"message"} hasErrors={errors.includes("message")} doChange={formHandleChange}/>
-
-
-
-      <label htmlFor="usertype" id="usertype">User type<br></br>
-        <label htmlFor="basic"><p style={{textAlign:"center"}}>basic</p>
-        <input type="radio" id="basic" name="usertype" value="basic" checked={form.usertype == "basic"} onChange={handleChange}/>
-        </label>
-
-        <label htmlFor="super"><p style={{textAlign:"center"}}>super</p>
-        <input type="radio" id="super" name="usertype" value="super" checked={form.usertype == "super"} onChange={handleChange}/>
-        </label>
-
-        <label htmlFor="admin"><p style={{textAlign:"center"}}>admin</p>
-        <input type="radio" id="admin" name="usertype" value="admin" checked={form.usertype == "admin"} onChange={handleChange}/>
-        </label>
-      </label><br></br>
-
-
 
       <label htmlFor="age">Select Age</label><br></br>
         <select name="age" id="age" onChange={handleChange} style={{margin:"0 calc(50% - 6.5em)"}}>
@@ -142,7 +134,7 @@ console.log("rendering contact form");
           <option value="elderly">Elderly</option>
         </select><br></br>
 
-       <CheckBoxInput type={"checkbox"} name={"tnc"} id={"tnc"} label={"I agree with the terms and conditions"} hasErrors={errors.includes("tnc")} doChange={formHandleChange}/><br></br>
+
 
       <div id="center-button">
       <button>Submit</button>
@@ -192,20 +184,14 @@ function UsersData(){
         return(
           <>
           <ul style={{textAlign:"center" , marginTop:"1.5em"}}>
-          <li>User data is:</li>
+          <li>Your message is:</li>
 
           <li>{persons.users.map( (el,index) => {
                     return(
                       <article  key={index} style={{cursor:"pointer" , padding:"1em", margin:"1em"}}>
-                      <p >Id : {el.id}</p>
-                      <p >Name : {el.name}</p>
-                      <p >Username : {el.username}</p>
-                      <p >Password : {el.password}</p>
-                      <p >Email : {el.email}</p>
-                      <p >Phone : {el.phone}</p>
+
                       <p >Message : {el.message}</p>
-                      <p >Usertype : {el.usertype}</p>
-                      <p >Age : {el.age}</p>
+
                       </article>
                     )
                   })}</li>
@@ -217,3 +203,36 @@ function UsersData(){
 export {
   Form , UsersData
 }
+
+//117      <TextInput type={"text"} name={"username"} id={"username"} placeholder={"name123"} label={"Surname"} hasErrors={errors.includes("username")} doChange={formHandleChange}/>
+
+//115    <TextInput type={"tel"} name={"phone"} id={"phone"} placeholder={"your phone"} label={"Phone"} hasErrors={errors.includes("phone")} doChange={formHandleChange}/>
+
+      // <label htmlFor="usertype" id="usertype">User type<br></br>
+      //   <label htmlFor="basic"><p style={{textAlign:"center"}}>basic</p>
+      //   <input type="radio" id="basic" name="usertype" value="basic" checked={form.usertype == "basic"} onChange={handleChange}/>
+      //   </label>
+      //
+      //   <label htmlFor="super"><p style={{textAlign:"center"}}>super</p>
+      //   <input type="radio" id="super" name="usertype" value="super" checked={form.usertype == "super"} onChange={handleChange}/>
+      //   </label>
+      //
+      //   <label htmlFor="admin"><p style={{textAlign:"center"}}>admin</p>
+      //   <input type="radio" id="admin" name="usertype" value="admin" checked={form.usertype == "admin"} onChange={handleChange}/>
+      //   </label>
+      // </label><br></br>
+
+
+//145  <CheckBoxInput type={"checkbox"} name={"tnc"} id={"tnc"} label={"I agree with the terms and conditions"} hasErrors={errors.includes("tnc")} doChange={formHandleChange}/><br></br>
+
+// <article  key={index} style={{cursor:"pointer" , padding:"1em", margin:"1em"}}>
+// <p >Id : {el.id}</p>
+// <p >Name : {el.name}</p>
+// <p >Username : {el.username}</p>
+// <p >Password : {el.password}</p>
+// <p >Email : {el.email}</p>
+// <p >Phone : {el.phone}</p>
+// <p >Message : {el.message}</p>
+// <p >Usertype : {el.usertype}</p>
+// <p >Age : {el.age}</p>
+// </article>

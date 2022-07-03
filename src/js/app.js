@@ -69,6 +69,7 @@ function App(){
 <div className="container">
   <h3 style={h3Style}>Appointment</h3>
   <Form userid={"users.id"} formTitle={"Complete form"}/>
+  <UsersData/>
 </div>
 
 
