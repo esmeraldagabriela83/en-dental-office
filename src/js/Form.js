@@ -106,7 +106,7 @@ console.log("rendering contact form");
             setErrors(errs);
             console.log("errs is : " , errs);
    }
-
+//nicu.moraru55@gmail.com
   return(
     <>
     <h3 style={h3Style}>{formTitle}</h3>
