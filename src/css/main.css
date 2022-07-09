@@ -1,0 +1,914 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+html {
+  font-family: Arial, Helvetica sans-serif;
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: CadetBlue;
+  color: #d1c1f0;
+}
+@media only screen and (min-width: 420px) {
+  body {
+    background-color: Chocolate;
+    color: #efeafa;
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    background-color: AliceBlue;
+    color: white;
+    font-size: 1.4rem;
+    color: CadetBlue;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body {
+    background-color: Cornsilk;
+    color: Chocolate;
+    font-size: 1.5rem;
+  }
+}
+body main .container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em;
+}
+body main #upperPart {
+  height: 450px;
+  width: 100vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 1.5px 1.5px 3px gray;
+  background-image: url("../assets/images/upper-part.jpg");
+}
+@media only screen and (min-width: 420px) {
+  body main #upperPart {
+    height: 400px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main #upperPart {
+    height: 600px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body main #upperPart {
+    height: 900px;
+  }
+}
+body main #upperPart .text {
+  background-color: DimGray;
+  color: white;
+  font-size: 7vw;
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+}
+body main nav {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5em;
+}
+body main nav #logo {
+  color: DimGray;
+}
+body main nav ion-icon {
+  color: DimGray;
+  font-size: 2rem;
+}
+body main nav ion-icon:hover {
+  color: #262626;
+}
+body main nav ul {
+  display: block;
+}
+@media only screen and (min-width: 420px) {
+  body main nav ul {
+    display: block;
+    margin-left: -5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space;
+    margin-left: -9em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body main nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space;
+    margin-left: -8.5em;
+  }
+}
+body main nav ul li a {
+  color: DimGray;
+}
+body main nav ul li a:hover {
+  color: #262626;
+}
+body main .sources-footer h5 {
+  text-align: center;
+  margin: 0.5em 0;
+}
+body main .sources-footer h5 a {
+  color: DimGray;
+}
+body main .sources-footer h5 a:hover {
+  color: #262626;
+}
+body main #content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1.5em;
+  background-color: #d1c1f0;
+  /*working // it works only in scss*/
+  color: CadetBlue;
+  box-shadow: 1.5px 1.5px 3px gray;
+}
+@media only screen and (min-width: 420px) {
+  .form {
+    background-color: #efeafa;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 1.5px 1.5px 3px gray;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .form {
+    color: AliceBlue;
+    /*working // it works only in scss*/
+    background-color: CadetBlue;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form {
+    color: Cornsilk;
+    /*working // it works only in scss*/
+    background-color: #eaa16c;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+.form label {
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+}
+.form label.error {
+  color: red;
+}
+.form label.error input, .form label.error textarea {
+  border: 3px solid red !important;
+}
+.form label.valid {
+  color: green;
+}
+.form label.valid input, .form label.valid textarea {
+  border: 3px solid green !important;
+}
+.form label input {
+  width: 100%;
+  line-height: 2em;
+  border-radius: 0.3em;
+  border: 1.5px solid DimGray;
+  color: CadetBlue;
+}
+@media only screen and (min-width: 420px) {
+  .form label input {
+    color: Chocolate;
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .form label input {
+    color: CadetBlue;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form label input {
+    font-size: 1.5rem;
+    color: Chocolate;
+  }
+}
+.form label input:focus {
+  outline: none;
+  border: 3px solid gray;
+  background-color: HoneyDew;
+}
+.form label [type=radio] {
+  margin-top: -3em;
+  display: inline-block;
+}
+.form textarea {
+  width: 100%;
+  height: 10vh;
+  border-radius: 0.3em;
+  border: 1.5px solid DimGray;
+  font-weight: bold;
+  color: CadetBlue;
+}
+@media only screen and (min-width: 420px) {
+  .form textarea {
+    color: Chocolate;
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .form textarea {
+    color: CadetBlue;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form textarea {
+    color: Chocolate;
+    font-size: 1.5rem;
+  }
+}
+.form textarea:focus {
+  outline: none;
+  border: 3px solid gray;
+  background-color: HoneyDew;
+}
+.form #center-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form #center-button button {
+  margin-top: 0.5em;
+  min-width: 50%;
+  outline: none;
+  background-color: CadetBlue;
+  color: #d1c1f0;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  box-shadow: 3px 3px 5px gray;
+  font-size: 1.3rem;
+}
+@media only screen and (min-width: 420px) {
+  .form #center-button button {
+    background-color: #efeafa;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .form #center-button button {
+    background-color: AliceBlue;
+    /*working // it works only in scss*/
+    color: CadetBlue;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .form #center-button button {
+    background-color: Cornsilk;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.5rem;
+  }
+}
+.form #center-button button:hover {
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+select {
+  width: 45%;
+  line-height: 2em;
+  border-radius: 0.3em;
+  border: 1.5px solid DimGray;
+  color: CadetBlue;
+}
+@media only screen and (min-width: 420px) {
+  select {
+    color: Chocolate;
+    font-size: 1.3rem;
+    padding: 0 1em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  select {
+    color: CadetBlue;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  select {
+    font-size: 1.5rem;
+    color: Chocolate;
+  }
+}
+select:focus {
+  outline: none;
+  border: 3px solid gray;
+  background-color: HoneyDew;
+}
+select option {
+  width: 100%;
+  line-height: 2em;
+  border-radius: 0.3em;
+  border: 1.5px solid DimGray;
+  color: CadetBlue;
+}
+@media only screen and (min-width: 420px) {
+  select option {
+    color: Chocolate;
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  select option {
+    color: CadetBlue;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  select option {
+    font-size: 1.5rem;
+    color: Chocolate;
+  }
+}
+select option:focus {
+  outline: none;
+  border: 3px solid gray;
+  background-color: HoneyDew;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#footer #icons {
+  margin: 1em 0 1em 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+@media only screen and (min-width: 420px) {
+  #footer #icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #footer #icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #footer #icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+#footer #icons .footerIcons {
+  padding: 1em;
+  font-size: 2.5rem;
+}
+#footer #icons .footerIcons a {
+  color: DimGray;
+}
+#footer #icons .footerIcons a:hover {
+  color: #262626;
+}
+@media only screen and (min-width: 420px) {
+  #footer #icons .footerIcons {
+    font-size: 2.7rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #footer #icons .footerIcons {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #footer #icons .footerIcons {
+    font-size: 3.5rem;
+  }
+}
+#footer button {
+  margin-top: 0.5em;
+  min-width: 50%;
+  outline: none;
+  background-color: CadetBlue;
+  color: #d1c1f0;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  box-shadow: 3px 3px 5px gray;
+  font-size: 1.3rem;
+}
+@media only screen and (min-width: 420px) {
+  #footer button {
+    background-color: #efeafa;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #footer button {
+    background-color: AliceBlue;
+    /*working // it works only in scss*/
+    color: CadetBlue;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #footer button {
+    background-color: Cornsilk;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.5rem;
+  }
+}
+#footer button:hover {
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+#info button {
+  margin: 1.5em 0;
+  min-width: 50%;
+  outline: none;
+  background-color: CadetBlue;
+  color: #d1c1f0;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  box-shadow: 3px 3px 5px gray;
+  font-size: 1.3rem;
+}
+@media only screen and (min-width: 420px) {
+  #info button {
+    background-color: #efeafa;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #info button {
+    background-color: AliceBlue;
+    /*working // it works only in scss*/
+    color: CadetBlue;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #info button {
+    background-color: Cornsilk;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.5rem;
+  }
+}
+#info button:hover {
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 1em;
+}
+.about button {
+  margin: 1.5em 0;
+  min-width: 50%;
+  outline: none;
+  background-color: CadetBlue;
+  color: #d1c1f0;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  box-shadow: 3px 3px 5px gray;
+  font-size: 1.3rem;
+}
+@media only screen and (min-width: 420px) {
+  .about button {
+    background-color: #efeafa;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .about button {
+    background-color: AliceBlue;
+    /*working // it works only in scss*/
+    color: CadetBlue;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about button {
+    background-color: Cornsilk;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 1.5px 1.5px 3px gray;
+    font-size: 1.5rem;
+  }
+}
+.about button:hover {
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.renovation {
+  text-align: center;
+  margin: 2em 0 1.5em 0;
+  padding: 1.5em 0;
+  color: white;
+  background-image: linear-gradient(to bottom, DimGray, #262626);
+  box-shadow: 1.5px 1.5px 3px gray;
+  text-shadow: 1.25px 1.25px 1.5px gray;
+}
+
+.renovation:hover {
+  background-image: linear-gradient(to top, DimGray, #262626);
+  transition: 0.5s ease;
+}
+
+#aboutUs article {
+  display: block;
+}
+@media only screen and (min-width: 420px) {
+  #aboutUs article {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #aboutUs article {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #aboutUs article {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #aboutUs article .about-half:nth-of-type(1) {
+    margin-right: 0.5em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #aboutUs article .about-half:nth-of-type(1) {
+    margin-right: 0.5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #aboutUs article .about-half:nth-of-type(2) {
+    margin-left: 0.5em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #aboutUs article .about-half:nth-of-type(2) {
+    margin-left: 0.5em;
+  }
+}
+#aboutUs ul li a {
+  color: DimGray;
+}
+#aboutUs ul li a:hover {
+  color: #262626;
+}
+#aboutUs ul li:nth-of-type(1) {
+  margin-bottom: 0.5em;
+}
+#aboutUs ul li:nth-of-type(2) {
+  margin-top: 0.5em;
+}
+
+ion-icon#ionArrow {
+  color: DimGray;
+  border: 3px solid DimGray;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1.5px 1.5px 3px gray;
+  font-size: 2.5rem;
+  margin-left: calc(50% - 1.75rem);
+  margin-right: calc(50% - 1.75rem);
+}
+ion-icon#ionArrow:hover {
+  color: #262626;
+  border: 3px solid #262626;
+  transition: 0.5s ease;
+}
+@media only screen and (min-width: 420px) {
+  ion-icon#ionArrow {
+    font-size: 2.7rem;
+    margin-left: calc(50% - 1.35rem);
+    margin-right: calc(50% - 1.35rem);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  ion-icon#ionArrow {
+    font-size: 3rem;
+    margin-left: calc(50% - 1.5rem);
+    margin-right: calc(50% - 1.5rem);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  ion-icon#ionArrow {
+    font-size: 3.5rem;
+    margin-left: calc(50% - 1.75rem);
+    margin-right: calc(50% - 1.75rem);
+  }
+}
+
+ul#dentalProcedures li {
+  position: relative;
+  border: 3px solid DimGray;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  padding: 1em 2em;
+  text-align: center;
+}
+ul#dentalProcedures li:hover {
+  border: 3px solid #262626;
+  transition: 0.5s ease;
+}
+ul#dentalProcedures li a {
+  color: DimGray;
+}
+ul#dentalProcedures li a:hover {
+  color: #262626;
+  transition: 0.5s ease;
+}
+@media only screen and (min-width: 1024px) {
+  ul#dentalProcedures li::before {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: -1em;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-image: url(../assets/images/tooth-solid.png);
+    background-position: center;
+    background-size: cover;
+    background-color: DimGray;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 3px gray;
+  }
+  ul#dentalProcedures li:hover::before {
+    background-color: #262626;
+    background-image: url(../assets/images/tooth-solid-with-fill.png);
+    transition: 0.5s ease;
+  }
+  ul#dentalProcedures li::after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    right: -1em;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    background-image: url(../assets/images/tooth-solid.png);
+    background-position: center;
+    background-size: cover;
+    background-color: DimGray;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 3px gray;
+  }
+  ul#dentalProcedures li:hover::after {
+    background-color: #262626;
+    background-image: url(../assets/images/tooth-solid-with-fill.png);
+    transition: 0.5s ease;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  ul#dentalProcedures li::before {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: -1em;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-image: url(../assets/images/tooth-solid.png);
+    background-position: center;
+    background-size: cover;
+  }
+  ul#dentalProcedures li:hover::before {
+    background-color: #262626;
+    background-image: url(../assets/images/tooth-solid-with-fill.png);
+    transition: 0.5s ease;
+  }
+  ul#dentalProcedures li::after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    right: -1em;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-image: url(../assets/images/tooth-solid.png);
+    background-position: center;
+    background-size: cover;
+  }
+  ul#dentalProcedures li:hover::after {
+    background-color: #262626;
+    background-image: url(../assets/images/tooth-solid-with-fill.png);
+    transition: 0.5s ease;
+  }
+}
+
+a#gdpr-home {
+  border: 3px solid DimGray;
+  padding: 1em 2em;
+  border-radius: 5px;
+  color: DimGray;
+  font-weight: bold;
+}
+a#gdpr-home:hover {
+  color: #262626;
+  border: 3px solid #262626;
+}
+
+#body-gdpr {
+  background-repeat: repeat-x repeat-y;
+  background-image: url(../assets/images/tooth-solid-small.png);
+}
+#body-gdpr:hover {
+  background-image: url(../assets/images/tooth-solid-with-fill-small.png);
+  transition: 0.5s ease;
+}
+#body-gdpr main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#background-gdbr-section h1, #background-gdbr-section h3 {
+  text-align: center;
+}
+#background-gdbr-section ul.first-ul li.first-li {
+  list-style-type: square;
+  margin-left: 1em;
+}
+
+#background-gdbr-section li ul.second-ul li.second-li {
+  list-style-type: circle;
+  margin-left: 2em;
+}
+
+#background-gdbr-section a {
+  color: DimGray;
+}
+
+#background-gdbr-section a:hover {
+  color: #262626;
+}
+
+article.content-procedures {
+  border: 3px solid DimGray;
+}
+article.content-procedures:hover {
+  border: 3px solid #262626;
+  transition: 0.5s ease;
+}
+
+section#background-gdbr-section, article.content-procedures {
+  margin: 3em;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1.5em;
+  background-color: #d1c1f0;
+  /*working // it works only in scss*/
+  color: CadetBlue;
+  box-shadow: 1.5px 1.5px 3px gray;
+}
+@media only screen and (min-width: 420px) {
+  section#background-gdbr-section, article.content-procedures {
+    background-color: #efeafa;
+    /*working // it works only in scss*/
+    color: Chocolate;
+    box-shadow: 1.5px 1.5px 3px gray;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  section#background-gdbr-section, article.content-procedures {
+    color: AliceBlue;
+    /*working // it works only in scss*/
+    background-color: CadetBlue;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  section#background-gdbr-section, article.content-procedures {
+    color: Cornsilk;
+    /*working // it works only in scss*/
+    background-color: #eaa16c;
+    box-shadow: 3px 3px 5px gray;
+  }
+}
+
+.img-procedures {
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 1.5px 1.5px 3px gray;
+  border: 3px solid DimGray;
+}
+@media only screen and (min-width: 1024px) {
+  .img-procedures {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .img-procedures {
+    width: 50%;
+  }
+}
+
+.img-procedures:hover {
+  border: 3px solid #262626;
+  transition: 0.5s ease;
+}
+
+.questions-image {
+  width: 90%;
+}
+@media only screen and (min-width: 420px) {
+  .questions-image {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .questions-image {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .questions-image {
+    width: 50%;
+  }
+}
